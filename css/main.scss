@@ -1,0 +1,581 @@
+// CSS Reset
+// 1. Use a more-intuitive box-sizing model.
+*, *::before, *::after {box-sizing: border-box;}
+
+// 2. Remove default margin
+    * {margin: 0; padding: 0;}
+
+// 3. Typographic tweaks
+    body {line-height: 1.4; -webkit-font-smoothing: antialiased;}
+    input, button, textarea, select {font: inherit;}
+    p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
+
+// 4. Improve media defaults
+    img, picture, video, canvas, svg {display: block; max-width: 100%;}
+
+
+// colours palette
+$primary_1: #3E5255;
+$primary_2: #B3D1D4;
+$primary_3: #FBE3B7;
+$neutral-dark: #666666;
+$neutral-mid:#999999;
+$neutral-light: #D8D8D8;
+$black: #282828;
+$white: #FFFFFF;
+
+
+// fonts
+@font-face {
+    font-family: "Montserrat";
+    src: url("assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf");
+}
+
+
+// type
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $black;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: -0.004em;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+// utility
+.clamp {
+    max-width: 1440px;
+    margin: auto; // this centers the page
+}
+
+.page-width {
+    padding: 0 20px;
+}
+
+.full-width {
+    width: 100%;
+    margin: auto; // this centers the page
+}
+
+.bg-primary-1 {
+    background: $primary_1;
+}
+
+.text-grid-container {
+    display: block;
+    grid-column-gap: 40px;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.text-grid-child {
+    grid-column: 3 / span 4;
+}
+
+.text-grid-child-wide {
+    grid-column: 2 / span 5;
+}
+
+.paragraphs-spacing {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.blue-text {
+    color: blue;
+}
+
+
+// spacing
+.block-txt {
+    padding: 32px 0 48px;
+}
+
+.block-img {
+    padding: 8px 0;
+}
+
+.block-caption {
+    padding: 8px 0 0;
+}
+
+.block-divider {
+    padding: 60px 0 36px;
+}
+
+.project-content {
+    padding-bottom: 32px;
+}
+
+
+// components
+html {
+    scroll-behavior: smooth;
+}
+
+
+// navbar
+.navbar {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-nav-mobile {
+
+    svg {
+        height: 20px;
+        width: auto;
+    }
+}
+
+.logo-nav {
+    display: none;
+
+    svg {
+        height: 20px;
+        width: auto;
+    }
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+        text-decoration: none;
+        color: $white;
+        font-size: 16px;
+
+        &:hover {
+            color:$primary_2;
+        }
+    }
+
+    .current {
+        font-weight: 700;
+    }
+}
+
+
+//footer
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid $primary_1;
+    padding: 12px 0;
+}
+
+.logo-foot {
+
+    svg {
+        height: 16px;
+        width: auto;
+    }
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 14px;
+
+    .contact-link {
+        text-decoration: none;
+        color:$primary_1;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+.page-copyright {
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 12px 0;
+}
+
+#success-message {
+    display: none;
+
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    background-color: $primary_2;
+    color: $primary_1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 92%;
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+// project page
+.hero-img {
+    width: 100%;
+}
+
+.hero-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 28px; 
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.3;
+
+    border-left: 2px solid $black;
+    padding-left: 8px;
+    margin-left: -8px;
+}
+
+.project-client {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.project-type {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    color: $neutral-dark;
+    padding-top: 2px;
+}
+
+.h2-divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    hr {
+        border: 1px solid $neutral-dark;
+        flex-grow: 1;
+    }
+}
+
+.project-footer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 16px;
+
+    padding: 12px 0 36px;
+
+    a {
+        color:$black;
+
+        &:hover {
+            color:$primary_2;
+        }
+    }
+}
+
+
+// images
+.caption-txt {
+    font-size: 14px;
+    text-align: right;
+}
+
+.img-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.img-child {
+    flex: 1 1 320px;
+}
+
+
+
+
+
+// breakpoints
+$tablet-portrait: 600px;
+$tablet-landscape: 860px;
+$desktop: 1200px;
+
+
+
+
+//responsive changes
+
+// from 600px to 860px
+
+@media (min-width: $tablet-portrait) {
+
+    .navbar {
+        padding: 20px 60px;
+    }
+
+    .logo-nav-mobile {
+        display: none;
+    }
+
+    .logo-nav {
+        display: block;
+    }
+
+    .page-width {
+        padding: 0 60px;
+    }
+
+    // type
+    body {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    // components
+    .hero-title {
+        gap: 4px;
+        border-left: 4px solid $black;
+        padding-left: 16px;
+        margin-left: -16px;
+    }
+
+    .project-client {
+        font-size: 20px;
+    }
+
+    .project-type {
+        gap: 12px;
+        font-size: 16px;
+        padding-top: 4px;
+    }
+
+    .hero-txt {
+        gap: 36px;
+    }
+
+    .paragraphs-spacing {
+        gap: 24px;
+    }
+
+    .h2-divider {
+        gap: 32px;
+
+        hr {
+            border-width: 2px;
+        }
+    }
+
+    .project-footer {
+        gap: 12px; // TODO
+        font-size: 16px; // TODO
+        padding: 12px 0 36px; // TODO
+    }
+
+    // images
+    .img-wrapper {
+        gap: 32px;
+    }
+
+    .caption-txt {
+        font-size: 16px;
+    }
+
+    // spacing
+    .block-txt {
+        padding: 56px 0 72px;
+    }
+
+    .block-img {
+        padding: 16px 0;
+    }
+
+    .block-caption {
+        padding: 16px 0 0;
+    }
+
+    .block-divider {
+        padding: 60px 0 44px;
+    }
+
+    .project-content {
+        padding-bottom: 44px;
+    }
+
+}
+
+
+// from 860px to 1200px
+
+@media (min-width: $tablet-landscape) {
+   
+    nav {
+        a {
+            font-size: 1.25rem;
+        }
+    }
+
+    .logo-nav {
+        svg{
+            height: 24px;
+        }
+    }
+
+    .text-grid-container {
+        display: grid;
+    }
+
+}
+
+
+// above 1200px
+
+@media (min-width: $desktop) {
+
+    .page-width {
+        padding: 0 80px;
+    }
+
+    .navbar {
+        padding: 20px 80px;
+    }
+
+    // type
+    body {
+      font-size: 24px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    // footer
+    .page-footer {
+        padding: 16px 0;
+    }
+
+    .logo-foot {
+
+        svg {
+            height: 20px;
+        }
+    }
+
+    .contact-info {
+        gap: 16px;
+        font-size: 16px;
+    }
+
+    .page-copyright {
+        padding: 20px 0;
+    }
+
+    // components
+    .hero-img {
+        padding: 0 80px;
+    }
+
+    .hero-title {
+        padding-left: 20px;
+        margin-left: -20px;
+    }
+
+    .project-client {
+        font-size: 28px;
+    }
+
+    .project-type {
+        font-size: 20px;
+    }
+
+    .hero-txt {
+        gap: 40px;
+    }
+
+    .paragraphs-spacing {
+        gap: 32px;
+    }
+
+    .h2-divider {
+        gap: 40px;
+    }
+
+    .project-footer {
+        gap: 16px;
+        font-size: 20px;
+        padding: 20px 0 80px;
+    }
+
+    // images
+    .img-wrapper {
+        gap: 40px;
+    }
+
+    .caption-txt {
+        font-size: 20px;
+    }
+
+    // spacing
+    .block-txt {
+        padding: 72px 0 100px;
+    }
+
+    .block-img {
+        padding: 20px 0;
+    }
+
+    .block-caption {
+        padding: 20px 0 0;
+    }
+
+    .block-divider {
+        padding: 92px 0 60px;
+    }
+
+    .project-content {
+        padding-bottom: 60px;
+    }
+}
+
+// TODO
+//change px units to rem where necesary
+// check copy email message responsiviness
