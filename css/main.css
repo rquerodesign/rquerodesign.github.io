@@ -640,6 +640,7 @@ nav .current {
   right: 0;
   width: 320px;
   overflow: hidden;
+  pointer-events: none;
 }
 .portrait-img-container img {
   transform: translateX(100px);

@@ -857,6 +857,7 @@ $desktop: 1200px;
     width: 320px;
 
     overflow: hidden;
+    pointer-events: none;
 
     img {
         transform: translateX(100px);
