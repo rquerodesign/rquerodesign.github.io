@@ -201,6 +201,10 @@ nav {
     .current {
         font-weight: 700;
     }
+
+    .current-page {
+        pointer-events: none;
+    }
 }
 
 

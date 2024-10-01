@@ -180,6 +180,9 @@ nav a:hover {
 nav .current {
   font-weight: 700;
 }
+nav .current-page {
+  pointer-events: none;
+}
 
 .page-footer {
   display: flex;
