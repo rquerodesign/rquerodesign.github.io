@@ -1,0 +1,25 @@
+/*  use this for a single low-maintenance responsive grid of projects
+
+.project-scroll {
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 52px;
+
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+} */
+
+
+/*  use this for a  controlled grid that works best for an even number of projects
+    change the display from grid to block usign a media query for small devices
+
+.project-scroll {
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 52px;
+
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.project-card {
+    grid-column: span 3;
+} */
