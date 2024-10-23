@@ -545,9 +545,9 @@ nav .current-page {
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 28px;
-  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  grid-template-columns: 1fr;
   padding-bottom: 40px;
-  padding-top: 40px;
+  padding-top: 24px;
 }
 
 .project-card {
@@ -631,7 +631,8 @@ nav .current-page {
     grid-auto-columns: 44%;
   }
   .project-grid {
-    grid-column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 36px;
     grid-row-gap: 40px;
   }
   .home-hero-logo {
