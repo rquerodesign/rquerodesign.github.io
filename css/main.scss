@@ -12,6 +12,7 @@
 
 // 4. Improve media defaults
     img, picture, video, canvas, svg {display: block; max-width: 100%;}
+    img, video, svg {pointer-events: none;}
 
 
 
@@ -292,9 +293,27 @@ nav {
     gap: 2px;
     line-height: 1.3;
 
-    border-left: 2px solid $black;
-    padding-left: 8px;
-    margin-left: -8px;
+    position: relative;
+
+    &:hover {
+        .line {
+            animation: line-draw 0.5s ease 0s 1 normal forwards;
+        
+            @keyframes line-draw {
+                0% { height: 0%; }
+                100% { height: 100%; }
+            }
+        }
+    }  
+}
+
+.line {
+    position: absolute;
+    left: -10px;
+
+    background-color: $black;
+    height: 100%;
+    width: 2px;  
 }
 
 .project-client {
@@ -414,9 +433,11 @@ $desktop: 1200px;
     // components
     .hero-title {
         gap: 4px;
-        border-left: 4px solid $black;
-        padding-left: 16px;
-        margin-left: -16px;
+    }
+
+    .line {
+        left: -20px;
+        width: 4px;
     }
 
     .project-client {
@@ -572,10 +593,9 @@ $desktop: 1200px;
         padding: 0 80px;
     }
 
-    .hero-title {
-        padding-left: 20px;
-        margin-left: -20px;
-    }
+    .line {
+        left: -24px;
+    }    
 
     .project-client {
         font-size: 1.75rem;
@@ -670,7 +690,7 @@ $desktop: 1200px;
 
 .content-spacing {
     padding-top: 100px;
-    padding-bottom: 80px;
+    padding-bottom: 120px;
 }
 
 .h1-home {
@@ -682,11 +702,9 @@ $desktop: 1200px;
 
 .project-scroll {
     display: grid;
-    // grid-column-gap: 3.125%;
     grid-column-gap: 6%;
 
     grid-auto-flow: column;
-    // grid-auto-columns: 82.8125%;
     grid-auto-columns: 82%;
   
     overflow-x: auto;
@@ -713,8 +731,7 @@ $desktop: 1200px;
     // grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     grid-template-columns: 1fr;
 
-    padding-bottom: 40px;
-    padding-top: 24px;
+    // padding-top: 36px;
 }
 
 .project-card {
@@ -754,6 +771,10 @@ $desktop: 1200px;
     &:hover {
         .project-card-title {
             text-decoration: underline;
+        }
+
+        img {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         }
     }
 }
@@ -1036,3 +1057,69 @@ $desktop: 1200px;
         font-size: 1.5rem;
     }
 }
+
+
+
+
+// animations
+
+.fade-in-a {
+    animation: fade-in-top 2s ease 0s 1 normal forwards;
+}
+
+.fade-in-a2 {
+    animation: fade-in-top-2 2.5s ease 0s 1 normal forwards;
+}
+
+@keyframes fade-in-top {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-24px);
+        opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+  @keyframes fade-in-top-2 {
+    0% {
+      opacity: 0;
+    }
+
+    60% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.fade-in-b {
+    animation: fade-in-side 2.5s ease 0s 1 normal forwards;
+}
+
+@keyframes fade-in-side {
+    0% {
+      opacity: 0;
+    }
+
+    70% {
+        transform: translateX(12px);
+        opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
