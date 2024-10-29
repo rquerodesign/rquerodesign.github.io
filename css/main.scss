@@ -1102,24 +1102,3 @@ $desktop: 1200px;
       opacity: 1;
     }
 }
-
-.fade-in-b {
-    animation: fade-in-side 2.5s ease 0s 1 normal forwards;
-}
-
-@keyframes fade-in-side {
-    0% {
-      opacity: 0;
-    }
-
-    70% {
-        transform: translateX(12px);
-        opacity: 0;
-    }
-  
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-}
-
